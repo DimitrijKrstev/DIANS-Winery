@@ -9,7 +9,7 @@ export function Homepage() {
 		nav('/login');
 	};
 	return (
-		<div className=" w-[100vw] h-[100vh] bg-cover fixed justify-center">
+		<div className=" w-[100vw] h-[100vh]  fixed justify-center">
 			<div className="flex justify-center">
 				<div className="flex justify-center bg-stone-800 p-6 mt-8 ml-6 mr-6 rounded-3xl overflow-hidden gap-12 font-body text-5xl">
 					<button>Nastani</button>
@@ -31,15 +31,15 @@ export function Homepage() {
 					onClick={handlelogin}
 				/>
 			</div>
+			<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-6 flex justify-center font-body text-2xl">
+				EST. 2023
+			</div>
 
 			<div className="flex justify-center w-max h-max items-center ml-80 mt-32 bg-gray-800 bg-opacity-50 p-4 rounded-2xl grid-cols-4 gap-10">
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
-			</div>
-			<div className="flex justify-center font-body text-2xl mt-40">
-				EST. 2023
 			</div>
 		</div>
 	);
