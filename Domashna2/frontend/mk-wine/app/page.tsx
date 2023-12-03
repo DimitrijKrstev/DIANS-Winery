@@ -1,15 +1,14 @@
-'use client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Homepage } from './homepage';
-import { Login } from './login';
-
+// "use client";
 export default function Home() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Homepage />} />
-				<Route path="login" element={<Login />} />
-			</Routes>
-		</BrowserRouter>
+		<div className=" w-[100vw] h-[100vh] bg-cover fixed justify-center">
+			<div className="flex justify-center w-max h-max items-center ml-80 mt-32 bg-gray-800 bg-opacity-50 p-4 rounded-2xl grid-cols-4 gap-10">
+				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
+				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
+				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
+				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
+			</div>
+			<div className="flex justify-center font-body text-2xl mt-40">EST. 2023</div>
+		</div>
 	);
 }
