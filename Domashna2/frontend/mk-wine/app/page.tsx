@@ -8,7 +8,7 @@ export default function Home() {
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
 				<div className="bg-stone-800 w-48 h-64 rounded-3xl"></div>
 			</div>
-			<div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-6 flex justify-center font-body text-2xl">
+			<div className="absolute bottom-36 left-1/2 transform -translate-x-1/2 text-center font-body text-2xl">
 				EST. 2023
 			</div>
 		</div>

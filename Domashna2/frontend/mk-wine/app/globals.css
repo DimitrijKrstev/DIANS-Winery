@@ -26,3 +26,9 @@ body {
 	max-height: 100vh;
 	color: white;
 }
+
+@layer components {
+	.input-primary {
+    @apply rounded-3xl mb-3 h-[10%] text-black;
+	}
+}
