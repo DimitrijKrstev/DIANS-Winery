@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 :root {
 	--foreground-rgb: 0, 0, 0;
 	--background-start-rgb: 214, 219, 220;
@@ -22,6 +22,7 @@ body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	overflow: hidden;
 	max-width: 100vw;
 	max-height: 100vh;
 	color: white;
@@ -29,6 +30,6 @@ body {
 
 @layer components {
 	.input-primary {
-    @apply rounded-3xl mb-3 h-[10%] text-black;
+		@apply rounded-3xl mb-3 h-[10%] text-black;
 	}
 }
