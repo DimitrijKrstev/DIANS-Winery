@@ -18,7 +18,7 @@ export default function Wines() {
 							<Image
 								src={Logo}
 								alt="log1"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
+								className=" bg-black rounded-3xl p-6"
 							/>
 							<label className="font-body text-2xl text-center">
 								tga za jug
@@ -29,7 +29,7 @@ export default function Wines() {
 							<Image
 								src={Logo2}
 								alt="log2"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl ">Aleksandrija</label>
 						</div>
@@ -39,7 +39,7 @@ export default function Wines() {
 							<Image
 								src={Logo3}
 								alt="log3"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
+								className=" bg-black rounded-3xl p-6"
 							/>
 							<label className="font-body text-2xl">vranec</label>
 						</div>
@@ -47,7 +47,7 @@ export default function Wines() {
 							<Image
 								src={Logo4}
 								alt="log4"
-								className=" bg-black rounded-3xl w-[60%] h-[90%]  p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
@@ -59,7 +59,7 @@ export default function Wines() {
 							<Image
 								src={Logo5}
 								alt="log5"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">berovo</label>
 						</div>
@@ -67,7 +67,7 @@ export default function Wines() {
 							<Image
 								src={Logo6}
 								alt="log6"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">vranec</label>
 						</div>
@@ -77,7 +77,7 @@ export default function Wines() {
 							<Image
 								src={Logo7}
 								alt="log7"
-								className=" bg-black rounded-3xl w-[60%] h-[90%]  p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
@@ -85,7 +85,7 @@ export default function Wines() {
 							<Image
 								src={Logo8}
 								alt="log8"
-								className=" bg-black rounded-3xl w-[60%] h-[90%]  p-4"
+								className=" bg-black rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">merlot</label>
 						</div>
