@@ -1,9 +1,9 @@
 // "use client";
-import Logo from "../public/images/MKWineLogo.png";
-import Image from "next/image";
-import Icon from "../public/images/Icon.png";
+import Logo from '../public/images/MKWineLogo.png';
+import Image from 'next/image';
+import Icon from '../public/images/Icon.png';
 //import { useRouter } from "next/navigation";
-import Link from "next/link";
+import Link from 'next/link';
 
 export function Header() {
 	//const router = useRouter();
@@ -16,10 +16,12 @@ export function Header() {
 					<Link className="mr-20" href="/map">
 						Mapa
 					</Link>
-					<button className="ml-20">Vina</button>
+					<Link href="/Wines" className="ml-20">
+						Vina
+					</Link>
 					<button>Za nas</button>
 				</div>
-				<Link href="/" className="fixed justify-center w-[15%] ml-11 z-50">
+				<Link href="/" className="fixed justify-center w-[12%] ml-11 z-50">
 					<Image src={Logo} alt="MKWineLogo" />
 				</Link>
 			</div>
