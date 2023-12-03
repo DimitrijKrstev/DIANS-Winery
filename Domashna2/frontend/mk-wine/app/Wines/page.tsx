@@ -18,18 +18,20 @@ export default function Wines() {
 							<Image
 								src={Logo}
 								alt="log1"
-								className=" bg-black rounded-3xl w-[50%] h-[90%] ml-4 p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
 							/>
-							<label className="font-body text-2xl">tga za jug</label>
+							<label className="font-body text-2xl text-center">
+								tga za jug
+							</label>
 						</div>
 
 						<div className="flex justify-center  flex-col gap-5">
 							<Image
 								src={Logo2}
 								alt="log2"
-								className=" bg-black rounded-3xl w-[50%] h-[90%] ml-7 p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
 							/>
-							<label className="font-body text-2xl">Aleksandrija</label>
+							<label className="font-body text-2xl ">Aleksandrija</label>
 						</div>
 					</div>
 					<div className="flex justify-center flex-row gap-20">
@@ -45,7 +47,7 @@ export default function Wines() {
 							<Image
 								src={Logo4}
 								alt="log4"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] ml-4 p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%]  p-4"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
@@ -57,7 +59,7 @@ export default function Wines() {
 							<Image
 								src={Logo5}
 								alt="log5"
-								className=" bg-black rounded-3xl w-[70%] h-[90%] p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
 							/>
 							<label className="font-body text-2xl">berovo</label>
 						</div>
@@ -65,7 +67,7 @@ export default function Wines() {
 							<Image
 								src={Logo6}
 								alt="log6"
-								className=" bg-black rounded-3xl w-[50%] h-[90%] ml-3 p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%] p-4"
 							/>
 							<label className="font-body text-2xl">vranec</label>
 						</div>
@@ -75,7 +77,7 @@ export default function Wines() {
 							<Image
 								src={Logo7}
 								alt="log7"
-								className=" bg-black rounded-3xl w-[60%] h-[90%] ml-3 p-4"
+								className=" bg-black rounded-3xl w-[60%] h-[90%]  p-4"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
