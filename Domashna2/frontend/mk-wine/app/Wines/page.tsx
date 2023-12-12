@@ -10,7 +10,7 @@ import Logo8 from '../../public/images/vino8.png';
 
 export default function Wines() {
 	return (
-		<div className="flex justify-center  items-center ">
+		<div className="flex justify-center  items-center h-screen mt-16 ">
 			<div className=" flex flex-row bg-gray-800 bg-opacity-50 gap-44 rounded-3xl p-4">
 				<div className="flex justify-center  flex-col gap-9">
 					<div className="flex justify-center flex-row gap-20">

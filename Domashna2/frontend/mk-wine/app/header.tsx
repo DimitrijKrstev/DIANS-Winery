@@ -12,7 +12,7 @@ export function Header() {
 		<div>
 			<div className="flex justify-center">
 				<div className="flex justify-center bg-stone-800 p-6 mt-8 ml-6 mr-6 rounded-3xl overflow-hidden gap-12 font-body text-5xl">
-					<button>Nastani</button>
+					<Link href="/events">Nastani</Link>
 					<Link className="mr-20" href="/map">
 						Mapa
 					</Link>
