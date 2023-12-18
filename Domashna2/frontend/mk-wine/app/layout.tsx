@@ -19,8 +19,8 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<div className="flex justify-center items-start">
-					<div className="absolute top-0">
+				<div className="flex justify-center">
+					<div className="fixed top-0">
 						<Header />
 					</div>
 				</div>

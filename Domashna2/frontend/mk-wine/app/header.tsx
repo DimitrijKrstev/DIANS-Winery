@@ -11,23 +11,36 @@ export function Header() {
 	return (
 		<div>
 			<div className="flex justify-center">
-				<div className="flex justify-center bg-stone-800 p-6 mt-8 ml-6 mr-6 rounded-3xl overflow-hidden gap-12 font-body text-5xl">
-					<Link href="/events">Nastani</Link>
-					<Link className="mr-20" href="/map">
-						Mapa
-					</Link>
-					<Link href="/Wines" className="ml-20">
-						Vina
-					</Link>
-					<button>Za nas</button>
+				<div className="  flex justify-center lg:w-[58vw] h-[13vh] items-center bg-stone-800 p-6 mt-8 ml-6 mr-6 rounded-3xl overflow-hidden sm:gap-4 lg:gap-12 md:gap-6 font-body lg:text-5xl md:text-2xl whitespace-nowrap">
+					<div className="flex justify-between lg:gap-56 md:gap-44 sm:gap-32">
+						<div className="flex justify-between gap-10 items-center ">
+							<Link href="/events" className=" flex items-center flex-shrink">
+								Nastani
+							</Link>
+							<Link className=" flex items-center flex-shrink" href="/map">
+								Mapa
+							</Link>
+						</div>
+						<div className=" flex justify-between gap-10 items-center">
+							<Link href="/Wines" className=" flex items-center flex-shrink ">
+								Vina
+							</Link>
+							<button className="whitespace-nowrap flex items-center flex-shrink">
+								Za nas
+							</button>
+						</div>
+					</div>
 				</div>
-				<Link href="/" className="fixed justify-center w-[12%] ml-11 z-50">
+				<Link
+					href="/"
+					className="fixed justify-center w-[12%] items-center top-0 lg:ml-11  md:ml-7 sm:ml-5 z-50"
+				>
 					<Image src={Logo} alt="MKWineLogo" />
 				</Link>
 			</div>
-			<div className="fixed top-11 right-20 p-5 rounded-full  text-white font-body text-5xl w-[7%] mr-40">
-				<Link href="/login">
-					<Image src={Icon} alt="Login Icon" className="w-max" />
+			<div className="fixed lg:top-11 lg:right-20 md:top-9 md:right-1 p-5 rounded-full  text-white font-body text-5xl w-[7vw] mr-40">
+				<Link href="/login" className="shrink-0">
+					<Image src={Icon} alt="Login Icon" />
 				</Link>
 			</div>
 		</div>
