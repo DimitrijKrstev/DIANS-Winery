@@ -10,15 +10,15 @@ import Logo8 from '../../public/images/vino8.png';
 
 export default function Wines() {
 	return (
-		<div className="flex justify-center  items-center h-screen mt-16 ">
-			<div className=" flex flex-row bg-gray-800 bg-opacity-50 gap-44 rounded-3xl p-4">
-				<div className="flex justify-center  flex-col gap-9">
+		<div className="flex justify-center  items-center h-screen ">
+			<div className=" flex flex-row bg-black bg-opacity-50 gap-44 rounded-3xl p-4 w-[65vw] h-full">
+				<div className="flex justify-center  flex-col gap-9 mt-24">
 					<div className="flex justify-center flex-row gap-20">
 						<div className="flex justify-center  flex-col gap-5">
 							<Image
 								src={Logo}
 								alt="log1"
-								className=" bg-black rounded-3xl p-6"
+								className=" bg-stone-800 rounded-3xl p-6"
 							/>
 							<label className="font-body text-2xl text-center">
 								tga za jug
@@ -29,7 +29,7 @@ export default function Wines() {
 							<Image
 								src={Logo2}
 								alt="log2"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl ">Aleksandrija</label>
 						</div>
@@ -39,7 +39,7 @@ export default function Wines() {
 							<Image
 								src={Logo3}
 								alt="log3"
-								className=" bg-black rounded-3xl p-6"
+								className=" bg-stone-800 rounded-3xl p-6"
 							/>
 							<label className="font-body text-2xl">vranec</label>
 						</div>
@@ -47,19 +47,19 @@ export default function Wines() {
 							<Image
 								src={Logo4}
 								alt="log4"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-center  flex-col gap-5">
+				<div className="flex justify-center  flex-col gap-5  mt-24">
 					<div className="flex justify-center flex-row gap-20">
 						<div className="flex justify-center  flex-col gap-5">
 							<Image
 								src={Logo5}
 								alt="log5"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">berovo</label>
 						</div>
@@ -67,7 +67,7 @@ export default function Wines() {
 							<Image
 								src={Logo6}
 								alt="log6"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">vranec</label>
 						</div>
@@ -77,7 +77,7 @@ export default function Wines() {
 							<Image
 								src={Logo7}
 								alt="log7"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">bela voda</label>
 						</div>
@@ -85,7 +85,7 @@ export default function Wines() {
 							<Image
 								src={Logo8}
 								alt="log8"
-								className=" bg-black rounded-3xl  p-6"
+								className=" bg-stone-800 rounded-3xl  p-6"
 							/>
 							<label className="font-body text-2xl">merlot</label>
 						</div>
