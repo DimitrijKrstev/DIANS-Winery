@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 
 import { MapContainer, TileLayer, GeoJSON, useMap } from "react-leaflet";
 import type { GeoJsonObject } from "geojson";
-import wineries from "../../../../../../src/main/resources/output.json";
+import wineries from "../../../../../../Domashna1/output.json";
 
 function Map() {
 	return (
