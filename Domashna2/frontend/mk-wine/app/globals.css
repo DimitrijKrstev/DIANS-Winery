@@ -41,3 +41,29 @@ body {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+.cityName {
+	margin-top: 5vw;
+}
+#citiesContainer {
+	min-height: 100vh;
+	width: 100vw;
+	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.4);
+	background-blend-mode: multiply;
+}
+#cityInfoContainer {
+	flex-shrink: 0;
+}
+.text-shadowed-white {
+	color: white;
+	text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.8);
+}
+#readMoreButton {
+	width: 200px;
+}
+#desc {
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
