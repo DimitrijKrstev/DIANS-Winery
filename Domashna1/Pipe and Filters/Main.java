@@ -1,10 +1,11 @@
-import java.util.List;
-import
+import macedonia.winery.mkwine.fileManager.FileManager;
 
-public class RunPipe {
+import java.util.List;
+
+public class Main {
     public static void main(String[] args) {
 
-        List<String> content = FileManager.getContent("src/main/resources/input.json");
+        List<String> content = FileManager.getContent("../input.json");
 
         Pipe<List<String>> pipe = new Pipe<>();
         Filter<List<String>> InformationFilter = new InformationFilter();
@@ -13,6 +14,6 @@ public class RunPipe {
         pipe.addFilter(PolygonFilter);
         System.out.println("TEST");
 
-        FileManager.writeOutput(pipe.runFilters(content), "src/main/resources/output.json");
+        FileManager.writeOutput(pipe.runFilters(content), "Domashna1/output.json");
     }
 }

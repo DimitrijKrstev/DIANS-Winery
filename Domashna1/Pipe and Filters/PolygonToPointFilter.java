@@ -1,5 +1,3 @@
-package macedonia.winery.mkwine.pipe;
-
 import java.util.LinkedList;
 import java.util.List;
 
