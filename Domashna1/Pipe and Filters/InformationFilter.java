@@ -1,5 +1,3 @@
-package macedonia.winery.mkwine.pipe;
-
 import java.util.List;
 
 public class InformationFilter implements Filter<List<String>>{
