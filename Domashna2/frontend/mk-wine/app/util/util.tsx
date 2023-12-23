@@ -1,9 +1,9 @@
-export function LoginUser(username, password, setUser, setError) {
+export function LoginUser(email, password, setUser, setError) {
   try {
     fetch("http://localhost:8008/user/login", {
       method: "POST",
       body: JSON.stringify({
-        username: username,
+        username: email,
         password: password,
       }),
       headers: {

@@ -11,20 +11,20 @@ export default function Home() {
 	return (
 		<div>
 			<div className=" w-[100vw] h-[100vh] bg-cover flex justify-center items-center">
-				<div className="flex justify-center w-[60%] h-[40%] items-center  bg-black bg-opacity-50 p-4 rounded-2xl lg:flex-row md:flex-row sm:flex-row gap-10 overflow-x-auto hide-scrollbar">
+				<div className="flex justify-center lg:w-[63%] lg:h-[40%] md:w-[45%] md:h-[45%] sm:w-[80vw] sm:h-[35vh]  w-[50%] h-[28%] items-center  bg-black bg-opacity-50  p-4 rounded-2xl md:rounded-2xl lg:flex-nowrap sm:flex-nowrap md:flex-nowrap lg:flex-row md:flex-row flex-wrap lg:gap-10 md:gap-10 sm:gap-6 gap-0 overflow-x-auto hide-scrollbar">
 					<Link
 						href="Winehomepage"
-						className=" w-[13vw] h-[35vh] rounded-3xl shrink-0 "
+						className=" lg:w-[13vw] lg:h-[36vh] md:w-[15vw] md:h-[40vh] sm:w-[23vw] sm:h-[30vh] w-[40vw] h-[35vh] rounded-3xl shrink-0 "
 					>
 						<Image className="" src={Vinarija1} alt="1" />
 					</Link>
-					<div className=" w-[13vw] h-[35vh] rounded-3xl shrink-0 ">
+					<div className=" lg:w-[13vw] lg:h-[36vh] md:w-[15vw] md:h-[40vh] sm:w-[23vw] sm:h-[30vh] w-[40vw] h-[35vh] rounded-3xl shrink-0 ">
 						<Image className="" src={Vinarija2} alt="2" />
 					</div>
-					<div className=" w-[13vw] h-[35vh]  rounded-3xl shrink-0 ">
+					<div className=" lg:w-[13vw] lg:h-[36vh] md:w-[15vw] md:h-[40vh] sm:w-[23vw] sm:h-[30vh] w-[40vw] h-[35vh]  rounded-3xl shrink-0 ">
 						<Image className="" src={Vinarija3} alt="3" />
 					</div>
-					<div className=" w-[13vw] h-[35vh]  rounded-3xl shrink-0 ">
+					<div className=" lg:w-[13vw] lg:h-[36vh] md:w-[15vw] md:h-[40vh] sm:w-[23vw] sm:h-[30vh] w-[40vw] h-[35vh]  rounded-3xl shrink-0 ">
 						<Image className="" src={Vinarija4} alt="4" />
 					</div>
 				</div>
