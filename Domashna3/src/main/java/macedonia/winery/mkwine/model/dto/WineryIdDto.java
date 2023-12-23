@@ -1,4 +1,4 @@
-package macedonia.winery.mkwine.model.Dtos;
+package macedonia.winery.mkwine.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,5 +6,5 @@ import lombok.Setter;
 @Setter
 @Getter
 public class WineryIdDto {
-    Long wineId;
+    String wineId;
 }

@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
+// To set all entities to use Builder design pattern
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -19,6 +21,8 @@ public class User {
     private Long id;
     private String username;
     private String password;
+    @OneToMany
+    List<Comment> comments;
     @ManyToMany
     List<Winery> likedWineries;
 }
