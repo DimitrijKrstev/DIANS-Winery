@@ -15,8 +15,9 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    String username;
+    private Long id;
+    private String username;
+    private String password;
     @ManyToMany
     List<Winery> likedWineries;
 }
