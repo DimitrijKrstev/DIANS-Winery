@@ -30,7 +30,7 @@ export function Header() {
 					</div>
 					<Link href="/" className="h-[80px] w-1/5 basis-1/5 bg-stone-800">
 						<Image
-							className="relative p-0 shrink-0 top-[-27%]"
+							className="relative p-0 shrink-0 top-[-27%] z-50"
 							src={Logo}
 							alt="MKWineLogo"
 						/>

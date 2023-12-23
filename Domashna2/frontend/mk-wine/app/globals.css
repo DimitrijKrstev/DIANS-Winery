@@ -33,3 +33,11 @@ body {
 		@apply rounded-3xl mb-3 h-[10%] text-black;
 	}
 }
+.hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.hide-scrollbar {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}

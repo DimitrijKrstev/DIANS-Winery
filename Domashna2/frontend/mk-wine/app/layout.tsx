@@ -20,7 +20,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={inter.className}>
 				<div className="flex justify-center">
-					<div className="fixed top-0">
+					<div className="fixed top-0 z-50">
 						<Header />
 					</div>
 				</div>
