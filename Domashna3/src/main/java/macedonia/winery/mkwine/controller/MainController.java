@@ -3,6 +3,7 @@ package macedonia.winery.mkwine.controller;
 import lombok.AllArgsConstructor;
 import macedonia.winery.mkwine.model.Comment;
 import macedonia.winery.mkwine.model.dto.UserDto;
+import macedonia.winery.mkwine.model.dto.UserLikeDto;
 import macedonia.winery.mkwine.model.dto.WineryCommentDto;
 import macedonia.winery.mkwine.model.dto.WineryIdDto;
 import macedonia.winery.mkwine.model.User;
@@ -14,14 +15,15 @@ import macedonia.winery.mkwine.repository.WineRepository;
 import macedonia.winery.mkwine.repository.WineryRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 @RestController
+@CrossOrigin
 @AllArgsConstructor
 // To be split into multiple controllers following SOLID principles
 public class MainController {
@@ -54,16 +56,31 @@ public class MainController {
     }
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
-    @PutMapping("/wineries/addComment")
+    @PostMapping("/user/likeWinery")
+    public User likeWinery(@RequestBody UserLikeDto userLikeDto){
+        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
+        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
+        user.getLikedWineries().add(winery);
+
+        return userRepository.save(user);
+    }
+
+    @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
+    @PostMapping("/user/dislikeWinery")
+    public User dislikeWinery(@RequestBody UserLikeDto userLikeDto) {
+        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
+        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
+        user.getLikedWineries().remove(winery);
+        return userRepository.save(user);
+    }
+
+    @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
+    @PostMapping("/wineries/addComment")
     public Winery addComment(@RequestBody WineryCommentDto wineryCommentDto) {
-        System.out.println(wineryCommentDto.getUserId());
-        User user = userRepository.findById(Long.parseLong(wineryCommentDto.getUserId())).orElse(null);
         Winery winery = wineryRepository.findById(Long.parseLong(wineryCommentDto.getWineryId())).orElse(null);
-        Comment comment = commentRepository.save(Comment.builder()
-                .author(user)
-                .text(wineryCommentDto.getText()).build());
-        user.getComments().add(comment);
+        Comment comment = Comment.builder().text(wineryCommentDto.getText()).build();
         winery.getCommentList().add(comment);
+        commentRepository.save(comment);
         return wineryRepository.save(winery);
     }
 
@@ -72,7 +89,8 @@ public class MainController {
     User registerUser(@RequestBody UserDto userDto){
         User newUser = User.builder()
                 .username(userDto.getUsername())
-                .password(userDto.getPassword()).build();
+                .password(userDto.getPassword())
+                .likedWineries(new ArrayList<>()).build();
 
         return userRepository.save(newUser);
     }

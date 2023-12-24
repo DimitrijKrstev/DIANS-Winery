@@ -24,11 +24,18 @@ export default function Home() {
 							View available wines
 						</button>
 					</div>
-					<div className="flex lg:basis-1/4 md:basis-1/4  sm:basis-1/4 lg:w-auto md:w-auto sm:w-auto w-[70%]   flex-col bg-stone-800 rounded-xl p-4">
-						<p className="mb-4">2 Reviews</p>
+					<div className="flex lg:basis-1/4 md:basis-1/4 lg:h-auto md:h-auto sm:h-auto h-[25vh] sm:basis-1/4 lg:w-auto md:w-auto sm:w-auto w-[70%] lg:mt-0  md:mt-0 sm:mt-0 mt-3  flex-col bg-stone-800 rounded-xl p-4">
+						<h1>Komentari:</h1>
+						<div className="overflow-x-auto hide-scrollbar bg-black bg-opacity-50 mb-4 mt-4 p-2 rounded-lg text-left lg:h-[14vh] md:h-[14vh] sm:h-[14vh] h-[6vh]  whitespace-nowrap">
+							<p className="mb-4 bg-stone-800 rounded-lg p-2">2 Reviews</p>
+							<p className="mb-4 bg-stone-800 rounded-lg p-2">2 Reviews</p>
+
+							<p className="mb-4 bg-stone-800 rounded-lg p-2">2 Reviews</p>
+							<p className="mb-4 bg-stone-800 rounded-lg p-2">2 Reviews</p>
+						</div>
 						<textarea
 							placeholder="Enter your review"
-							className="lg:h-[80%] md:h-[80%] sm:h-[80%]  h-[40%] rounded-xl p-2 text-black "
+							className="lg:h-[40%] md:h-[40%] sm:h-[40%]  h-[20%] rounded-xl p-2 text-black "
 						></textarea>
 						<button className="bg-stone-600 rounded-3xl text-white hover:text-red-600 mt-4 w-max p-3">
 							Save

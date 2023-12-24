@@ -58,6 +58,7 @@ export default function Login() {
 						Register
 					</Link>
 				</div>
+				<p>{user.username}</p>
 			</div>
 		</div>
 	);
