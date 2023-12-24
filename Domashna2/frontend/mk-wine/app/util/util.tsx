@@ -1,4 +1,4 @@
-export function LoginUser(email, setUser, setError) {
+export function LoginUser(email, password, setUser, setError) {
 	try {
 		fetch('http://localhost:8080/user/login', {
 			method: 'POST',
@@ -32,6 +32,7 @@ export const RegisterUser = (username, email, password, setUser, setError) => {
 		method: 'POST',
 		body: JSON.stringify({
 			username: username,
+			email: email,
 			password: password,
 		}),
 		headers: {

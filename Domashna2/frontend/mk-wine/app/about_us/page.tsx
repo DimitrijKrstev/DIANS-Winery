@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Logo from '../../public/images/vinoskop.png';
+import Logo from '../../public/images/grupna.jpg';
 
 export default function About() {
 	return (

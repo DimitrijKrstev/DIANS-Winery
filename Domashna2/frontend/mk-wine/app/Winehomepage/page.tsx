@@ -19,6 +19,12 @@ export default function Home() {
 							West, to reinvent your term of taste due to the culinary delights
 							that city restaurants offer, and to be part of a very typical
 						</p>
+						<label htmlFor="num" className="mt-5">
+							Contact:
+						</label>
+						<p className="text-shadowed-white text-sm   " id="num">
+							07834234234
+						</p>
 						<br />
 						<button className="bg-stone-800 rounded-3xl text-white hover:text-red-600 mt-4 w-max p-5">
 							View available wines
