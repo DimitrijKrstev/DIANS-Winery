@@ -21,4 +21,10 @@ public class User {
     private String password;
     @ManyToMany
     List<Winery> likedWineries;
+
+    public User(String username, String password, List<Winery> likedWineries) {
+        this.username = username;
+        this.password = password;
+        this.likedWineries = likedWineries;
+    }
 }
