@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class WineryCommentDto {
+public class UserLikeDto {
+    String userId;
     String wineryId;
-    String text;
 }

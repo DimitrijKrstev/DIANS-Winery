@@ -21,8 +21,7 @@ public class User {
     private Long id;
     private String username;
     private String password;
-    @OneToMany(mappedBy = "user")
-    List<Comment> comments;
+
     @ManyToMany
     List<Winery> likedWineries;
 
