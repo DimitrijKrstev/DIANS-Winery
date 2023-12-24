@@ -27,11 +27,13 @@ public class DataHolder {
     private final WineRepository wineRepository;
     private final UserRepository userRepository;
 
-    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository, UserRepository userRepository) {
+    private final ArrayList<String> desck;
+    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository, UserRepository userRepository, ArrayList<String> desck) {
         this.wineryRepository = wineryRepository;
         this.urls = urls;
         this.wineRepository = wineRepository;
         this.userRepository = userRepository;
+        this.desck = desck;
     }
     @PostConstruct
     public void init() throws IOException {
@@ -66,6 +68,22 @@ public class DataHolder {
             wineRepository.save(new Wine("Kratoshija","https://cdn.discordapp.com/attachments/1171082431676289045/1188555206737285150/vino7.png?ex=659af34b&is=65887e4b&hm=41002a873f0a51b2d69afa739b8d8564a0fc7b33b40d520c62eb62389bcee9e7&"));
             wineRepository.save(new Wine("Signatore","https://cdn.discordapp.com/attachments/1171082431676289045/1188555686288822312/vino8.png?ex=659af3bd&is=65887ebd&hm=d06efe6edee348e059629feb7741fe7ec1cffcc9ec091194aaedf547a0386515&"));
 
+            desck.add("Vinarija Grkov se naogja vo podnozhjeto na planinata Kozhuf, vo seloto Krnjevo, vo okolinata na Kavadarci.");
+            desck.add("Popova kula e vinarija koja e locirana vo Demir kapija.");
+            desck.add("Domaine Lepovo e osnovana vo 2009 godina. Ima kapacitet od 700.000 litri vino.");
+            desck.add("Vinarijata Chateau Kamnik e osnovana vo 2004-ta godina. Locirana e vo glavniot grad Skopje. ");
+            desck.add("Vinarijata Stobi se naogja samo 80km od Skopje, vo srceto na Makedonija. ");
+            desck.add("Vinarijata Kartal e locirana vo Skopje, so kapacitet od 100.000 litri na godishno nivo, najsovremena ");
+            desck.add("Vinarijata Zaharchev e locirana vo Kavadarci, osnovana vo 2020-ta godina. ");
+            desck.add("Chateau Sopot edna od najzhivopisnite vinarii vo Makedonija, locirana vo srceto na Veleshkiot vinski region.");
+            desck.add("Bovin e prvata privatno izgradena vinarija vo Makedonija.");
+            desck.add("Vinarijata Tikvesh e osnovana vo dalecnata 1885-ta godina.");
+            desck.add("2.Vinarijata Chateau Kamnik e osnovana vo 2004-ta godina. Locirana e vo glavniot grad Skopje.");
+            desck.add("Vinarijata Tamov");
+            desck.add("Vinarijata Skovin e osnovana vo 1979 godina kako posveten sledbenik na vekovnata tradicija na proizvodstvo na vin.");
+            desck.add("2.Vinarijata Stobi se naogja samo 80km od Skopje, vo srceto na Makedonija.");
+            desck.add("2.Chateau Sopot edna od najzhivopisnite vinarii vo Makedonija, locirana vo srceto na Veleshkiot vinski region.");
+            desck.add("Vinarijata Manastir (Monastery) e locirana vo seloto Openica, samo na 10km od Ohrid. Se naogja pod manasti");
             Object features = resultMap.get("features");
             List<String> names=new ArrayList<>();
             List<Wine> list1=new ArrayList<>();
@@ -142,11 +160,13 @@ public class DataHolder {
                         x = arrayList.get(0);
                         y = arrayList.get(1);
                     }
+                        if(phone == null)
+                            phone="Nema Telefonski broj";
                         if(name!=null) {
                             System.out.println(urls.get(b));
                             if(c==4)
                                 c=0;
-                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(),megalist.get(c)));
+                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b),desck.get(b), new ArrayList<Comment>(),megalist.get(c)));
                             b++;
                             c++;
                         }
