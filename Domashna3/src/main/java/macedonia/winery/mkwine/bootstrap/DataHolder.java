@@ -68,10 +68,41 @@ public class DataHolder {
 
             Object features = resultMap.get("features");
             List<String> names=new ArrayList<>();
+            List<Wine> list1=new ArrayList<>();
+            list1.add(wineRepository.findById(1L).orElse(null));
+            list1.add(wineRepository.findById(2L).orElse(null));
+            list1.add(wineRepository.findById(3L).orElse(null));
+            list1.add(wineRepository.findById(4L).orElse(null));
+
+            List<Wine> list2=new ArrayList<>();
+            list2.add(wineRepository.findById(3L).orElse(null));
+            list2.add(wineRepository.findById(6L).orElse(null));
+            list2.add(wineRepository.findById(7L).orElse(null));
+            list2.add(wineRepository.findById(8L).orElse(null));
+
+            List<Wine> list3=new ArrayList<>();
+            list3.add(wineRepository.findById(3L).orElse(null));
+            list3.add(wineRepository.findById(1L).orElse(null));
+            list3.add(wineRepository.findById(6L).orElse(null));
+            list3.add(wineRepository.findById(2L).orElse(null));
+
+            List<Wine> list4=new ArrayList<>();
+            list4.add(wineRepository.findById(5L).orElse(null));
+            list4.add(wineRepository.findById(4L).orElse(null));
+            list4.add(wineRepository.findById(6L).orElse(null));
+            list4.add(wineRepository.findById(1L).orElse(null));
+
+            List<List<Wine>> megalist=new ArrayList<>();
+            megalist.add(list1);
+            megalist.add(list2);
+            megalist.add(list3);
+            megalist.add(list4);
+
 
             if (features instanceof List) {
                 List<Object> featuresList = (List<Object>) features;
                 int b=0;
+                int c=0;
                 for (Object feature : featuresList) {
                     Map<String, Object> featureMap = (Map<String, Object>) feature;
                     Map<String, Object> properties = (Map<String, Object>) featureMap.get("properties");
@@ -113,8 +144,11 @@ public class DataHolder {
                     }
                         if(name!=null) {
                             System.out.println(urls.get(b));
-                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(), new ArrayList<Wine>()));
+                            if(c==4)
+                                c=0;
+                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(),megalist.get(c)));
                             b++;
+                            c++;
                         }
                     names.add(name);
                 }
