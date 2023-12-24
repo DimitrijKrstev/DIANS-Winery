@@ -67,3 +67,6 @@ body {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+#imghomepage > img {
+	border-radius: 1rem 1rem 1rem 1rem;
+}
