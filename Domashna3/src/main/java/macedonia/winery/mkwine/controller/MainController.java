@@ -40,7 +40,10 @@ public class MainController {
 
     @CrossOrigin(maxAge = 3600)
     @GetMapping("/wineries/getAll")
-    List<Winery> getAllWineries(){
+    @Transactional(readOnly = true)
+    public List<Winery> getAllWineries(){
+        List<Winery> wineries = wineryRepository.findAll();
+        System.out.println(wineries);
         return wineryRepository.findAll();
     }
 
