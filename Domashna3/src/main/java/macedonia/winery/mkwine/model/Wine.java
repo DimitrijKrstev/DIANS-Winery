@@ -21,8 +21,14 @@ public class Wine {
     @ManyToMany
     List<Winery> wineries;
 
-    public Wine(String name, List<Winery> wineries) {
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    @Basic(fetch = FetchType.EAGER)
+    String url;
+
+    public Wine(String name, List<Winery> wineries,String url) {
         this.name = name;
         this.wineries = wineries;
+        this.url=url;
     }
 }
