@@ -26,12 +26,16 @@ public class Winery {
     String amenity;
     Double X;
     Double Y;
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    @Basic(fetch = FetchType.EAGER)
+    String url;
     @ManyToMany
     List<Comment> commentList;
     @OneToMany
     List<Wine> wines;
 
-    public Winery(String name, String website, String phone, String email, String amenity, Double x, Double y, List<Comment> commentList, List<Wine> wines) {
+    public Winery(String name, String website, String phone, String email, String amenity, Double x, Double y,String url, List<Comment> commentList, List<Wine> wines) {
         this.name = name;
         this.website = website;
         this.phone = phone;
@@ -41,5 +45,7 @@ public class Winery {
         Y = y;
         this.commentList = commentList;
         this.wines = wines;
+        this.url=url;
     }
+
 }
