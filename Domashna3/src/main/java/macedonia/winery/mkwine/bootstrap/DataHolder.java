@@ -56,12 +56,53 @@ public class DataHolder {
             urls.add("https://cdn.discordapp.com/attachments/1171082431676289045/1188521139929096263/Chateau_Sopot_Winery_-_Copy.jpg?ex=659ad391&is=65885e91&hm=60c05916a8dd0218e0877f72fc8b9147da7609b37f7e91792659c0268e93ad6c&");
             urls.add("https://cdn.discordapp.com/attachments/1171082431676289045/1188521306459734116/monastery_winery.jpg?ex=659ad3b9&is=65885eb9&hm=0c6c9c53d168271c36711ee0354207ad6374625917181df9187bd5743cad1836&");
 
+
+            wineRepository.save(new Wine("Tga za Jug","https://cdn.discordapp.com/attachments/1171082431676289045/1188555093080023080/vino1.png?ex=659af330&is=65887e30&hm=8b94e61a423b50fe66c7b1b72ac3bb6cde07a33ed203b0824992ffee251e86cc&"));
+            wineRepository.save(new Wine("Alexandria","https://cdn.discordapp.com/attachments/1171082431676289045/1188555113409814628/vino2.png?ex=659af335&is=65887e35&hm=4161270d4b125f9049a52aa132d6ac1d4c59ad5574b8d8ba1ea5d279abdc56bb&"));
+            wineRepository.save(new Wine("Barovo","https://cdn.discordapp.com/attachments/1171082431676289045/1188555134582657054/vino3.png?ex=659af33a&is=65887e3a&hm=9cdfa9b9d386e44c7fb2d1f5ee5b8b23f490c4a08fed3df3e64aaf6e025bca43&"));
+            wineRepository.save(new Wine("Terov","https://cdn.discordapp.com/attachments/1171082431676289045/1188555159123542116/vino4.png?ex=659af340&is=65887e40&hm=5783603047440864ae43938c852dfa3b5f9e070c161fe113a3490a0ac5c103bc&"));
+            wineRepository.save(new Wine("Stobi","https://cdn.discordapp.com/attachments/1171082431676289045/1188555173660991529/vino5.png?ex=659af343&is=65887e43&hm=15022c17a0858218190489f2f0eaa6514263ced3387723310515e70ec7b768b8&"));
+            wineRepository.save(new Wine("BelaVoda","https://cdn.discordapp.com/attachments/1171082431676289045/1188555189842612316/vino6.png?ex=659af347&is=65887e47&hm=1d05024bb8092ad77c8a0081565ce5211a789b43ba7d2f01d0f6c7cef4df36c3&"));
+            wineRepository.save(new Wine("Kratoshija","https://cdn.discordapp.com/attachments/1171082431676289045/1188555206737285150/vino7.png?ex=659af34b&is=65887e4b&hm=41002a873f0a51b2d69afa739b8d8564a0fc7b33b40d520c62eb62389bcee9e7&"));
+            wineRepository.save(new Wine("Signatore","https://cdn.discordapp.com/attachments/1171082431676289045/1188555686288822312/vino8.png?ex=659af3bd&is=65887ebd&hm=d06efe6edee348e059629feb7741fe7ec1cffcc9ec091194aaedf547a0386515&"));
+
             Object features = resultMap.get("features");
             List<String> names=new ArrayList<>();
+            List<Wine> list1=new ArrayList<>();
+            list1.add(wineRepository.findById(1L).orElse(null));
+            list1.add(wineRepository.findById(2L).orElse(null));
+            list1.add(wineRepository.findById(3L).orElse(null));
+            list1.add(wineRepository.findById(4L).orElse(null));
+
+            List<Wine> list2=new ArrayList<>();
+            list2.add(wineRepository.findById(3L).orElse(null));
+            list2.add(wineRepository.findById(6L).orElse(null));
+            list2.add(wineRepository.findById(7L).orElse(null));
+            list2.add(wineRepository.findById(8L).orElse(null));
+
+            List<Wine> list3=new ArrayList<>();
+            list3.add(wineRepository.findById(3L).orElse(null));
+            list3.add(wineRepository.findById(1L).orElse(null));
+            list3.add(wineRepository.findById(6L).orElse(null));
+            list3.add(wineRepository.findById(2L).orElse(null));
+
+            List<Wine> list4=new ArrayList<>();
+            list4.add(wineRepository.findById(5L).orElse(null));
+            list4.add(wineRepository.findById(4L).orElse(null));
+            list4.add(wineRepository.findById(6L).orElse(null));
+            list4.add(wineRepository.findById(1L).orElse(null));
+
+            List<List<Wine>> megalist=new ArrayList<>();
+            megalist.add(list1);
+            megalist.add(list2);
+            megalist.add(list3);
+            megalist.add(list4);
+
 
             if (features instanceof List) {
                 List<Object> featuresList = (List<Object>) features;
                 int b=0;
+                int c=0;
                 for (Object feature : featuresList) {
                     Map<String, Object> featureMap = (Map<String, Object>) feature;
                     Map<String, Object> properties = (Map<String, Object>) featureMap.get("properties");
@@ -103,8 +144,11 @@ public class DataHolder {
                     }
                         if(name!=null) {
                             System.out.println(urls.get(b));
-                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(), new ArrayList<Wine>()));
+                            if(c==4)
+                                c=0;
+                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(),megalist.get(c)));
                             b++;
+                            c++;
                         }
                     names.add(name);
                 }
@@ -120,40 +164,9 @@ public class DataHolder {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        List<Winery> grupa1=new ArrayList<>();
-        grupa1.add(wineryRepository.findById(14L).orElse(null));
-        grupa1.add(wineryRepository.findById(12L).orElse(null));
-        grupa1.add(wineryRepository.findById(3L).orElse(null));
-        grupa1.add(wineryRepository.findById(4L).orElse(null));
-        grupa1.add(wineryRepository.findById(9L).orElse(null));
-        wineRepository.save(new Wine("Tga za Jug"));
 
-        List<Winery> grupa2=new ArrayList<>();
-        grupa2.add(wineryRepository.findById(13L).orElse(null));
-        grupa2.add(wineryRepository.findById(7L).orElse(null));
-        grupa2.add(wineryRepository.findById(8L).orElse(null));
-        grupa2.add(wineryRepository.findById(5L).orElse(null));
-        grupa2.add(wineryRepository.findById(10L).orElse(null));
-        wineRepository.save(new Wine("Alexandria"));
 
-        List<Winery> grupa3=new ArrayList<>();
-        grupa3.add(wineryRepository.findById(11L).orElse(null));
-        grupa3.add(wineryRepository.findById(2L).orElse(null));
-        grupa3.add(wineryRepository.findById(6L).orElse(null));
-        grupa3.add(wineryRepository.findById(1L).orElse(null));
-        grupa3.add(wineryRepository.findById(15L).orElse(null));
-        grupa3.add(wineryRepository.findById(16L).orElse(null));
-        wineRepository.save(new Wine("Barovo"));
 
-        wineRepository.save(new Wine("Terov"));
-
-        wineRepository.save(new Wine("Stobi"));
-
-        wineRepository.save(new Wine("BelaVoda"));
-
-        wineRepository.save(new Wine("Kratoshija"));
-
-        wineRepository.save(new Wine("Signatore"));
 
         userRepository.save(User.builder().username("dimi").password("dimi").likedWineries(Arrays.asList(wineryRepository.findById((long)1).orElse(null))).build());
     }

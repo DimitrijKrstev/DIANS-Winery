@@ -19,7 +19,13 @@ public class Wine {
     Long id;
     String name;
 
-    public Wine(String name) {
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    @Basic(fetch = FetchType.EAGER)
+    String url;
+
+    public Wine(String name,String url) {
         this.name = name;
+        this.url=url;
     }
 }

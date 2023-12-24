@@ -32,7 +32,7 @@ public class Winery {
     String url;
     @ManyToMany
     List<Comment> commentList;
-    @OneToMany
+    @ManyToMany
     List<Wine> wines;
 
     public Winery(String name, String website, String phone, String email, String amenity, Double x, Double y,String url, List<Comment> commentList, List<Wine> wines) {
