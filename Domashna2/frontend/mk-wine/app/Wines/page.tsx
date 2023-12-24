@@ -37,16 +37,16 @@ export default function Wines() {
 	}
 
 	function handleCategoryClick(wineType) {
-		setItems(wines.filter((win) => vino.name.includes(wineType)));
+		setItems(wineType);
 	}
 	return (
 		<div>
-			<div className=" fixed left-[4%] lg:top-[6%] md:top-[6%] sm:top-[6%] top-[12%]  justify-center grid grid-rows-3 items-center h-fit w-[10vw] bg-stone-800 font-body lg:text-2xl md:text-2xl sm:text-2xl text-xs gap-6 lg:p-3  p-8 rounded-3xl text-center z-50 overflow-auto hide-scrollbar">
+			<div className=" fixed left-[4%] lg:top-[6%] md:top-[6%] sm:top-[6%] top-[12%]  grid grid-rows items-center h-[90vh] w-[10vw] bg-stone-800 font-body lg:text-2xl md:text-2xl sm:text-2xl text-xs gap-6 lg:p-3  p-8 rounded-3xl text-center z-50 overflow-auto hide-scrollbar">
 				{wineries &&
 					wineries.map((winery) => (
 						<button
 							key={winery.name}
-							onClick={() => handleCategoryClick(winery.name)}
+							onClick={() => handleCategoryClick(winery.wines)}
 							className="hover:text-red-600 bg-black bg-opacity-50 p-2 rounded-xl"
 						>
 							{winery.name}
@@ -72,83 +72,17 @@ export default function Wines() {
 									className="flex flex-col text-center mx-auto"
 								>
 									<Image
-										src={Logo}
+										src={item.url}
+										height={100}
+										width={100}
 										alt="log1"
 										className=" bg-stone-800 rounded-3xl lg:p-6 lg:h-[30vh] h-[12vh] w-[10vw] lg:w-auto "
 									/>
 									<label className="font-body text-2xl text-center">
-										tga za jug
+										{item.name}
 									</label>
 								</div>
 							))}
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo2}
-								alt="log2"
-								className=" bg-stone-800 rounded-3xl lg:h-[30vh]  h-[12vh] w-[10vw] lg:w-auto  lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center ">
-								Aleksandrija
-							</label>
-						</div>
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo3}
-								alt="log3"
-								className=" bg-stone-800 rounded-3xl lg:p-6  lg:h-[30vh] w-[10vw] lg:w-auto "
-							/>
-							<label className="font-body text-2xl text-center">vranec</label>
-						</div>
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo4}
-								alt="log4"
-								className=" bg-stone-800 rounded-3xl lg:h-[30vh] w-[10vw] lg:w-auto  lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center">
-								bela voda
-							</label>
-						</div>
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo5}
-								alt="log5"
-								className=" bg-stone-800 rounded-3xl lg:h-[30vh] w-[10vw] lg:w-auto lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center">berovo</label>
-						</div>
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo6}
-								alt="log6"
-								className=" bg-stone-800 rounded-3xl  lg:h-[30vh] w-[10vw] lg:w-auto  lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center">vranec</label>
-						</div>
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo7}
-								alt="log7"
-								className=" bg-stone-800 rounded-3xl  lg:h-[30vh] w-[10vw] lg:w-auto  lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center ">
-								bela voda
-							</label>
-						</div>
-
-						<div className=" flex flex-col text-center mx-auto">
-							<Image
-								src={Logo8}
-								alt="log8"
-								className=" bg-stone-800 rounded-3xl lg:h-[30vh] w-[10vw] lg:w-auto lg:p-6"
-							/>
-							<label className="font-body text-2xl text-center">merlot</label>
-						</div>
 					</div>
 				</div>
 			</div>

@@ -60,20 +60,25 @@ public class MainController {
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
     @PostMapping("/user/likeWinery")
+    @Transactional
     public User likeWinery(@RequestBody UserLikeDto userLikeDto){
         User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
         Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
         user.getLikedWineries().add(winery);
-
-        return userRepository.save(user);
+        System.out.println("TEEESt");
+        User user2 = userRepository.save(user);
+        System.out.println(user);
+        return user2;
     }
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
     @PostMapping("/user/dislikeWinery")
+    @Transactional
     public User dislikeWinery(@RequestBody UserLikeDto userLikeDto) {
         User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
         Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
         user.getLikedWineries().remove(winery);
+        System.out.println(user);
         return userRepository.save(user);
     }
 
@@ -84,6 +89,8 @@ public class MainController {
         Comment comment = Comment.builder().text(wineryCommentDto.getText()).build();
         winery.getCommentList().add(comment);
         commentRepository.save(comment);
+        System.out.println("TEST");
+        System.out.println(wineryCommentDto.getText());
         return wineryRepository.save(winery);
     }
 
