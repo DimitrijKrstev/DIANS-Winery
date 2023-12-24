@@ -41,14 +41,56 @@ export function DislikeWine(email, wine, setUser) {
 		})
 			.then((response) => {
 				console.log(response);
-				console.log("CAAAAAAAAPPPPPSTEST");
+				if (!response.ok) throw new Error("Invalid username or password");
 				return response.json();
 			})
 			.then((data) => {
-				console.log(data);
 				setUser(data);
 			})
 			.catch((err) => {});
+	} catch (err) {}
+}
+
+export function LikeWine(email, wine, setUser) {
+	try {
+		fetch("http://localhost:8080/user/likeWinery", {
+			method: "POST",
+			body: JSON.stringify({
+				userId: email,
+				wineryId: wine,
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8",
+			},
+		})
+			.then((response) => {
+				console.log(response);
+				if (!response.ok) throw new Error("Invalid username or password");
+				return response.json();
+			})
+			.then((data) => {
+				setUser(data);
+			})
+			.catch((err) => {});
+	} catch (err) {}
+}
+
+export function AddComment(wine, comment) {
+	try {
+		fetch("http://localhost:8080/user/addComment", {
+			method: "POST",
+			body: JSON.stringify({
+				wineryId: wine,
+				text: comment,
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8",
+			},
+		}).then((response) => {
+			console.log(response);
+			if (!response.ok) throw new Error("Invalid comment");
+			return response.json();
+		});
 	} catch (err) {}
 }
 
