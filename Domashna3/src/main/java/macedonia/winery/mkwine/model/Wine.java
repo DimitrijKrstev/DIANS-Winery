@@ -18,11 +18,8 @@ public class Wine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    @ManyToMany
-    List<Winery> wineries;
 
-    public Wine(String name, List<Winery> wineries) {
+    public Wine(String name) {
         this.name = name;
-        this.wineries = wineries;
     }
 }
