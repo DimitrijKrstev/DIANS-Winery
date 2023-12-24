@@ -18,17 +18,8 @@ public class Wine {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    @ManyToMany
-    List<Winery> wineries;
 
-    @Lob
-    @Column(columnDefinition = "TEXT")
-    @Basic(fetch = FetchType.EAGER)
-    String url;
-
-    public Wine(String name, List<Winery> wineries,String url) {
+    public Wine(String name) {
         this.name = name;
-        this.wineries = wineries;
-        this.url=url;
     }
 }
