@@ -126,7 +126,7 @@ public class DataHolder {
         grupa1.add(wineryRepository.findById(3L).orElse(null));
         grupa1.add(wineryRepository.findById(4L).orElse(null));
         grupa1.add(wineryRepository.findById(9L).orElse(null));
-        wineRepository.save(new Wine("Tga za Jug",grupa1));
+        wineRepository.save(new Wine("Tga za Jug"));
 
         List<Winery> grupa2=new ArrayList<>();
         grupa2.add(wineryRepository.findById(13L).orElse(null));
@@ -134,7 +134,7 @@ public class DataHolder {
         grupa2.add(wineryRepository.findById(8L).orElse(null));
         grupa2.add(wineryRepository.findById(5L).orElse(null));
         grupa2.add(wineryRepository.findById(10L).orElse(null));
-        wineRepository.save(new Wine("Alexandria",grupa2));
+        wineRepository.save(new Wine("Alexandria"));
 
         List<Winery> grupa3=new ArrayList<>();
         grupa3.add(wineryRepository.findById(11L).orElse(null));
@@ -143,17 +143,17 @@ public class DataHolder {
         grupa3.add(wineryRepository.findById(1L).orElse(null));
         grupa3.add(wineryRepository.findById(15L).orElse(null));
         grupa3.add(wineryRepository.findById(16L).orElse(null));
-        wineRepository.save(new Wine("Barovo",grupa3));
+        wineRepository.save(new Wine("Barovo"));
 
-        wineRepository.save(new Wine("Terov",grupa2));
+        wineRepository.save(new Wine("Terov"));
 
-        wineRepository.save(new Wine("Stobi",grupa2));
+        wineRepository.save(new Wine("Stobi"));
 
-        wineRepository.save(new Wine("BelaVoda",grupa1));
+        wineRepository.save(new Wine("BelaVoda"));
 
-        wineRepository.save(new Wine("Kratoshija",grupa3));
+        wineRepository.save(new Wine("Kratoshija"));
 
-        wineRepository.save(new Wine("Signatore",grupa1));
+        wineRepository.save(new Wine("Signatore"));
 
         userRepository.save(User.builder().username("dimi").password("dimi").likedWineries(Arrays.asList(wineryRepository.findById((long)1).orElse(null))).build());
     }
