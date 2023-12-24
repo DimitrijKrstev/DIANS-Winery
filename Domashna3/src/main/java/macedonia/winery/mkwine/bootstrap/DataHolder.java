@@ -4,8 +4,10 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.annotation.PostConstruct;
 import macedonia.winery.mkwine.model.Comment;
+import macedonia.winery.mkwine.model.User;
 import macedonia.winery.mkwine.model.Wine;
 import macedonia.winery.mkwine.model.Winery;
+import macedonia.winery.mkwine.repository.UserRepository;
 import macedonia.winery.mkwine.repository.WineRepository;
 import macedonia.winery.mkwine.repository.WineryRepository;
 import org.springframework.stereotype.Component;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -22,11 +25,13 @@ public class DataHolder {
     private final WineryRepository wineryRepository;
     private final ArrayList<String> urls;
     private final WineRepository wineRepository;
+    private final UserRepository userRepository;
 
-    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository) {
+    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository, UserRepository userRepository) {
         this.wineryRepository = wineryRepository;
         this.urls = urls;
         this.wineRepository = wineRepository;
+        this.userRepository = userRepository;
     }
     @PostConstruct
     public void init() throws IOException {
@@ -97,6 +102,7 @@ public class DataHolder {
                         y = arrayList.get(1);
                     }
                         if(name!=null) {
+                            System.out.println(urls.get(b));
                             wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(), new ArrayList<Wine>()));
                             b++;
                         }
@@ -149,13 +155,7 @@ public class DataHolder {
 
         wineRepository.save(new Wine("Signatore",grupa1));
 
-
-
-
-
-
-
-
+        userRepository.save(User.builder().username("dimi").password("dimi").likedWineries(Arrays.asList(wineryRepository.findById((long)1).orElse(null))).build());
     }
 
 }
