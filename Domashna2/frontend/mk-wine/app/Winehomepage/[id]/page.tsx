@@ -70,7 +70,7 @@ export default function Home({ params }) {
 								Like
 							</button>
 						</div>
-						<div className="flex lg:basis-1/4 md:basis-1/4 lg:h-auto md:h-auto sm:h-auto h-[25vh] sm:basis-1/4 lg:w-auto md:w-auto sm:w-auto w-[70%] lg:mt-0  md:mt-0 sm:mt-0 mt-3  flex-col bg-stone-800 rounded-xl p-4">
+						<div className="flex lg:basis-1/4 md:basis-1/4 lg:h-max md:h-max sm:h-max h-[25vh] sm:basis-1/4 lg:w-auto md:w-auto sm:w-auto w-[70%] lg:mt-0  md:mt-0 sm:mt-0 mt-3  flex-col bg-stone-800 rounded-xl p-4">
 							<h1>Komentari:</h1>
 							<div className="overflow-x-auto hide-scrollbar bg-black bg-opacity-50 mb-4 mt-4 p-2 rounded-lg text-left lg:h-[14vh] md:h-[14vh] sm:h-[14vh] h-[6vh]  whitespace-nowrap">
 								{selectedWine.commentList.map((comm) => (
