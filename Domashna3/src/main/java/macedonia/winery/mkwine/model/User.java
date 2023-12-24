@@ -25,4 +25,10 @@ public class User {
     List<Comment> comments;
     @ManyToMany
     List<Winery> likedWineries;
+
+    public User(String username, String password, List<Winery> likedWineries) {
+        this.username = username;
+        this.password = password;
+        this.likedWineries = likedWineries;
+    }
 }

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -17,9 +18,28 @@ public class Winery {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    String name;
 
+    String website;
+    String phone;
+    String email;
+    String amenity;
+    Double X;
+    Double Y;
     @ManyToMany
     List<Comment> commentList;
     @OneToMany
     List<Wine> wines;
+
+    public Winery(String name, String website, String phone, String email, String amenity, Double x, Double y, List<Comment> commentList, List<Wine> wines) {
+        this.name = name;
+        this.website = website;
+        this.phone = phone;
+        this.email = email;
+        this.amenity = amenity;
+        X = x;
+        Y = y;
+        this.commentList = commentList;
+        this.wines = wines;
+    }
 }

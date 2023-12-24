@@ -5,12 +5,12 @@ import Link from 'next/link';
 export default function Register() {
 	return (
 		<div className="flex justify-center items-center h-screen">
-			<div className="flex flex-col lg:w-[80vw]  lg:scale-75   sm:scale-50 lg:h-[95vh] mt-12 bg-black bg-opacity-50 p-4 rounded-3xl grid-cols-2 gap-5 z-10 ">
-				<div className="flex justify-center ">
+			<div className="flex flex-col lg:w-[80vw]  lg:scale-75   sm:scale-50 lg:h-[95vh] mt-12 bg-black bg-opacity-50 p-4 lg:rounded-3xl md:rounded-3xl sm:rounded-3xl grid-cols-2 gap-5 z-10 ">
+				<div className="flex justify-center items-center ">
 					<div className="basis-1/2">
 						<Image src={Logo} alt="mkwinelogo" className=" basis-1/2  mr-6" />
 					</div>
-					<div className="flex flex-col font-body text-5xl mt-16 basis-1/2 z-50 ">
+					<div className="flex flex-col font-body lg:text-5xl md:text-5xl sm:text-5xl text-xl mt-16 basis-1/2 z-50 ">
 						<label className="mb-3">Username</label>
 						<input
 							type="text"
