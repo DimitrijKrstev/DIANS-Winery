@@ -18,10 +18,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 @RestController
+@CrossOrigin
 @AllArgsConstructor
 // To be split into multiple controllers following SOLID principles
 public class MainController {
@@ -60,7 +62,7 @@ public class MainController {
         User user = userRepository.findById(Long.parseLong(wineryCommentDto.getUserId())).orElse(null);
         Winery winery = wineryRepository.findById(Long.parseLong(wineryCommentDto.getWineryId())).orElse(null);
         Comment comment = commentRepository.save(Comment.builder()
-                .author(user)
+                .user(user)
                 .text(wineryCommentDto.getText()).build());
         user.getComments().add(comment);
         winery.getCommentList().add(comment);
@@ -70,10 +72,16 @@ public class MainController {
     @PostMapping("/user/register")
     // To be changed to service logic
     User registerUser(@RequestBody UserDto userDto){
+        System.out.println(userDto.getUsername());
+        System.out.println(userDto.getPassword());
         User newUser = User.builder()
                 .username(userDto.getUsername())
-                .password(userDto.getPassword()).build();
+                .password(userDto.getPassword())
+                .likedWineries(new ArrayList<>())
+                .comments(new ArrayList<>()).build();
 
+        System.out.println(newUser);
+        System.out.println(userRepository);
         return userRepository.save(newUser);
     }
 
