@@ -18,7 +18,8 @@ import Link from 'next/link';
 export default function Home() {
 	return (
 		<div>
-			<div className=" w-[100vw] h-[100vh] bg-cover flex justify-center items-center">
+			<div className=" w-[100vw] h-[100vh] bg-cover flex justify-center items-center flex-col">
+				<h1 className="text-center text-5xl font-body">Nasi vinarii</h1>
 				<div className="flex lg:w-[63%] lg:h-[40%] md:w-[45%] md:h-[45%] sm:w-[80vw] sm:h-[35vh]  w-[100%] h-[40%] items-center  bg-black bg-opacity-50  p-4  md:rounded-2xl lg:flex-nowrap sm:flex-nowrap md:flex-nowrap lg:flex-row md:flex-row flex-nowrap lg:gap-10 md:gap-10 sm:gap-6 gap-6 overflow-x-auto hide-scrollbar">
 					<Link
 						id="imghomepage"
