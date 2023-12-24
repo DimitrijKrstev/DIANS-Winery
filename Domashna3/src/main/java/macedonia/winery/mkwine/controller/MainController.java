@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Controller
+@RestController
 @AllArgsConstructor
 // To be split into multiple controllers following SOLID principles
 public class MainController {
