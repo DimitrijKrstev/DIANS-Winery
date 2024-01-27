@@ -23,7 +23,9 @@ public class WineryServiceImpl implements WineryService {
 
     @Override
     public List<Winery> listAllWineries() {
-       return wineryRepository.findAll();
+        List<Winery> wineries = wineryRepository.findAll();
+        System.out.println(wineries);
+        return wineryRepository.findAll();
     }
 
     @Override
