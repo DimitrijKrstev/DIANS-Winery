@@ -13,6 +13,9 @@ import macedonia.winery.mkwine.repository.CommentRepository;
 import macedonia.winery.mkwine.repository.UserRepository;
 import macedonia.winery.mkwine.repository.WineRepository;
 import macedonia.winery.mkwine.repository.WineryRepository;
+import macedonia.winery.mkwine.service.UserService;
+import macedonia.winery.mkwine.service.WineService;
+import macedonia.winery.mkwine.service.WineryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,77 +35,88 @@ public class MainController {
     WineRepository wineRepository;
     WineryRepository wineryRepository;
 
+    UserService userService;
+    WineService wineService;
+    WineryService wineryService;
+
     @CrossOrigin(maxAge = 3600)
     @GetMapping("/wines/getAll")
     List<Wine> getAllWines(){
-        return wineRepository.findAll();
+//        return wineRepository.findAll();
+       return wineService.listAllWines();
     }
 
     @CrossOrigin(maxAge = 3600)
     @GetMapping("/wineries/getAll")
     @Transactional(readOnly = true)
     public List<Winery> getAllWineries(){
-        List<Winery> wineries = wineryRepository.findAll();
-        System.out.println(wineries);
-        return wineryRepository.findAll();
+//        List<Winery> wineries = wineryRepository.findAll();
+//        System.out.println(wineries);
+//        return wineryRepository.findAll();
+        return wineryService.listAllWineries();
     }
 
     @CrossOrigin(maxAge = 3600)
     @GetMapping("/wineries/getComments")
     // To be changed to service logic
     List<Comment> getCommentsForWinery(@RequestBody WineryIdDto wineryIdDto){
-        Winery winery = wineryRepository.findById(Long.parseLong(wineryIdDto.getWineId())).orElse(null);
-        if(winery != null){
-            return winery.getCommentList();
-        }
-        return null;
+//        Winery winery = wineryRepository.findById(Long.parseLong(wineryIdDto.getWineId())).orElse(null);
+//        if(winery != null){
+//            return winery.getCommentList();
+//        }
+//        return null;
+        return wineryService.listComments(wineryIdDto);
     }
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
     @PostMapping("/user/likeWinery")
     @Transactional
     public User likeWinery(@RequestBody UserLikeDto userLikeDto){
-        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
-        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
-        user.getLikedWineries().add(winery);
-        System.out.println("TEEESt");
-        User user2 = userRepository.save(user);
-        System.out.println(user);
-        return user2;
+//        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
+//        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
+//        user.getLikedWineries().add(winery);
+//        System.out.println("TEEESt");
+//        User user2 = userRepository.save(user);
+//        System.out.println(user);
+//        return user2;
+        return userService.likeWinery(userLikeDto);
     }
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
     @PostMapping("/user/dislikeWinery")
     @Transactional
     public User dislikeWinery(@RequestBody UserLikeDto userLikeDto) {
-        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
-        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
-        user.getLikedWineries().remove(winery);
-        System.out.println(user);
-        return userRepository.save(user);
+//        User user = userRepository.findById(Long.valueOf(userLikeDto.getUserId())).orElse(null);
+//        Winery winery = wineryRepository.findById(Long.valueOf(userLikeDto.getWineryId())).orElse(null);
+//        user.getLikedWineries().remove(winery);
+//        System.out.println(user);
+//        return userRepository.save(user);
+        return userService.disslikeWinery(userLikeDto);
     }
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
     @PostMapping("/wineries/addComment")
     public Winery addComment(@RequestBody WineryCommentDto wineryCommentDto) {
-        Winery winery = wineryRepository.findById(Long.parseLong(wineryCommentDto.getWineryId())).orElse(null);
-        Comment comment = Comment.builder().text(wineryCommentDto.getText()).build();
-        winery.getCommentList().add(comment);
-        commentRepository.save(comment);
-        System.out.println("TEST");
-        System.out.println(wineryCommentDto.getText());
-        return wineryRepository.save(winery);
+//        Winery winery = wineryRepository.findById(Long.parseLong(wineryCommentDto.getWineryId())).orElse(null);
+//        Comment comment = Comment.builder().text(wineryCommentDto.getText()).build();
+//        winery.getCommentList().add(comment);
+//        commentRepository.save(comment);
+//        System.out.println("TEST");
+//        System.out.println(wineryCommentDto.getText());
+//        return wineryRepository.save(winery);
+        return wineryService.addComment(wineryCommentDto);
     }
 
     @PostMapping("/user/register")
     // To be changed to service logic
     User registerUser(@RequestBody UserDto userDto){
-        User newUser = User.builder()
-                .username(userDto.getUsername())
-                .password(userDto.getPassword())
-                .likedWineries(new ArrayList<>()).build();
-
-        return userRepository.save(newUser);
+//        User newUser = User.builder()
+//                .username(userDto.getUsername())
+//                .password(userDto.getPassword())
+//                .likedWineries(new ArrayList<>()).build();
+//
+//        return userRepository.save(newUser);
+        return userService.registerUser(userDto);
     }
 
     @PostMapping("/user/login")
@@ -112,7 +126,8 @@ public class MainController {
         System.out.println(userDto);
         System.out.println(userDto.getUsername());
         System.out.println(userDto.getPassword());
-        User user = userRepository.findUserByUsernameAndPassword(userDto.getUsername(), userDto.getPassword());
+//        User user = userRepository.findUserByUsernameAndPassword(userDto.getUsername(), userDto.getPassword());
+        User user = userService.loginUser(userDto);
         System.out.println(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
         // return new ResponseEntity<>("UserNotFound", HttpStatus.NOT_FOUND);
