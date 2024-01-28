@@ -1,3 +1,3 @@
-import jsonData from "../../../Domashna1/output.json";
+import jsonData from "./output.json";
 
 export default jsonData;
