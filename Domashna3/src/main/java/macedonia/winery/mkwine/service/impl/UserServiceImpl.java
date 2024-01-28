@@ -1,5 +1,6 @@
 package macedonia.winery.mkwine.service.impl;
 
+import macedonia.winery.mkwine.bootstrap.Logger;
 import macedonia.winery.mkwine.model.User;
 import macedonia.winery.mkwine.model.Winery;
 import macedonia.winery.mkwine.model.dto.UserDto;
@@ -9,7 +10,9 @@ import macedonia.winery.mkwine.repository.WineryRepository;
 import macedonia.winery.mkwine.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.ArrayList;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,6 +21,7 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(UserRepository userRepository, WineryRepository wineryRepository) {
         this.userRepository = userRepository;
         this.wineryRepository = wineryRepository;
+
     }
 
     @Override
