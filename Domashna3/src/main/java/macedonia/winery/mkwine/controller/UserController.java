@@ -6,13 +6,13 @@ import macedonia.winery.mkwine.model.dto.UserDto;
 import macedonia.winery.mkwine.model.dto.UserLikeDto;
 import macedonia.winery.mkwine.service.UserService;
 import macedonia.winery.mkwine.service.impl.UserServiceImpl;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 @CrossOrigin
@@ -39,14 +39,4 @@ public class UserController {
         return userService.registerUser(userDto);
     }
 
-    @PostMapping("/user/login")
-    @Transactional(readOnly = true)
-    public ResponseEntity<?> loginUser(@RequestBody UserDto userDto){
-        System.out.println(userDto);
-        System.out.println(userDto.getUsername());
-        System.out.println(userDto.getPassword());
-        User user = userService.loginUser(userDto);
-        System.out.println(user);
-        return new ResponseEntity<>(user, HttpStatus.OK);
-    }
 }

@@ -1,12 +1,12 @@
-'use client';
-import Logo from '../public/images/MKWineLogo.png';
-import Image from 'next/image';
-import Icon from '../public/images/Icon.png';
+"use client";
+import Logo from "../public/images/MKWineLogo.png";
+import Image from "next/image";
+import Icon from "../public/images/Icon.png";
 //import { useRouter } from "next/navigation";
-import { useEffect, useState, useContext } from 'react';
+import { useEffect, useState, useContext } from "react";
 
-import Link from 'next/link';
-import { GlobalContext } from './context/page';
+import Link from "next/link";
+import { GlobalContext } from "./context/context";
 
 export function Header() {
 	//const router = useRouter();
@@ -32,10 +32,7 @@ export function Header() {
 							Mapa
 						</Link>
 					</div>
-					<Link
-						href="/"
-						className="lg:h-[80px] h-[64px] md:h-[74px] w-1/5 basis-1/5 bg-stone-800"
-					>
+					<Link href="/" className="lg:h-[80px] h-[64px] md:h-[74px] w-1/5 basis-1/5 bg-stone-800">
 						<Image
 							className="relative p-0 shrink-0 lg:top-[-27%] md:top-[-12%] top-[5%]  z-50"
 							src={Logo}
@@ -61,12 +58,12 @@ export function Header() {
 				</div>
 			</div>
 			<div className="fixed lg:justify-end md:top-6 md:right-1 top-8 right-[-15px] p-5 rounded-full  text-white font-body text-5xl lg:w-[7vw] md:w-[10vw] w-[17vw] ">
-				{user.username == '' && (
+				{user.username == "" && (
 					<Link href="/login" className="shrink-0">
 						<Image src={Icon} alt="Login Icon" />
 					</Link>
 				)}
-				{user.username != '' && (
+				{user.username != "" && (
 					<Link href="/user" className="shrink-0">
 						<Image src={Icon} alt="Login Icon" />
 					</Link>
