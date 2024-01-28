@@ -1,23 +1,20 @@
-package macedonia.winery.mkwine.controller;
+package com.example.microservicelikedwineries.controller;
 
+
+import com.example.microservicelikedwineries.model.User;
+import com.example.microservicelikedwineries.model.dto.UserLikeDto;
+import com.example.microservicelikedwineries.service.UserService;
 import lombok.AllArgsConstructor;
-import macedonia.winery.mkwine.model.User;
-import macedonia.winery.mkwine.model.dto.UserDto;
-import macedonia.winery.mkwine.model.dto.UserLikeDto;
-import macedonia.winery.mkwine.service.UserService;
-import macedonia.winery.mkwine.service.impl.UserServiceImpl;
-import org.springframework.http.*;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 @RestController
 @CrossOrigin
 @AllArgsConstructor
-public class UserController {
+public class UserLikesWIneryController {
     UserService userService;
 
     @CrossOrigin(maxAge = 3600, origins = "http://localhost:3000")
@@ -33,10 +30,4 @@ public class UserController {
     public User dislikeWinery(@RequestBody UserLikeDto userLikeDto) {
         return userService.disslikeWinery(userLikeDto);
     }
-
-    @PostMapping("/user/register")
-    User registerUser(@RequestBody UserDto userDto){
-        return userService.registerUser(userDto);
-    }
-
 }

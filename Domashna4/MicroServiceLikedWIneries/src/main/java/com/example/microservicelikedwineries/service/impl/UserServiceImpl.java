@@ -1,27 +1,22 @@
-package macedonia.winery.mkwine.service.impl;
+package com.example.microservicelikedwineries.service.impl;
 
-import macedonia.winery.mkwine.bootstrap.Logger;
-import macedonia.winery.mkwine.model.User;
-import macedonia.winery.mkwine.model.Winery;
-import macedonia.winery.mkwine.model.dto.UserDto;
-import macedonia.winery.mkwine.model.dto.UserLikeDto;
-import macedonia.winery.mkwine.repository.UserRepository;
-import macedonia.winery.mkwine.repository.WineryRepository;
-import macedonia.winery.mkwine.service.UserService;
+import com.example.microservicelikedwineries.model.User;
+import com.example.microservicelikedwineries.model.Winery;
+import com.example.microservicelikedwineries.model.dto.UserLikeDto;
+import com.example.microservicelikedwineries.repository.UserRepository;
+import com.example.microservicelikedwineries.repository.WineryRepository;
+import com.example.microservicelikedwineries.service.UserService;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
-import java.util.ArrayList;
-
 
 @Service
 public class UserServiceImpl implements UserService {
+
     private final UserRepository userRepository;
     private final WineryRepository wineryRepository;
+
     public UserServiceImpl(UserRepository userRepository, WineryRepository wineryRepository) {
         this.userRepository = userRepository;
         this.wineryRepository = wineryRepository;
-
     }
 
     @Override
@@ -39,15 +34,4 @@ public class UserServiceImpl implements UserService {
         user.getLikedWineries().remove(winery);
         return userRepository.save(user);
     }
-
-    @Override
-    public User registerUser(UserDto userDto) {
-        User newUser = User.builder()
-                .username(userDto.getUsername())
-                .password(userDto.getPassword())
-                .likedWineries(new ArrayList<>()).build();
-
-        return userRepository.save(newUser);
-    }
-    
 }

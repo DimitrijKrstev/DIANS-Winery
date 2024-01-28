@@ -1,5 +1,6 @@
 package macedonia.winery.mkwine.service.impl;
 
+import macedonia.winery.mkwine.bootstrap.Logger;
 import macedonia.winery.mkwine.model.Comment;
 import macedonia.winery.mkwine.model.Winery;
 import macedonia.winery.mkwine.model.dto.WineryCommentDto;
@@ -25,6 +26,8 @@ public class WineryServiceImpl implements WineryService {
     public List<Winery> listAllWineries() {
         List<Winery> wineries = wineryRepository.findAll();
         System.out.println(wineries);
+        Logger LoggerInstance = Logger.getInstance();
+        LoggerInstance.write("This is a log");
         return wineryRepository.findAll();
     }
 
