@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: ./Domashna2/frontend/mk-wine
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spring-backend
+
+  # Java Spring Backend
+  spring-backend:
+    build:
+      context: ./  # Path to the directory containing your Java Spring app
+    ports:
+      - "8080:8080"
