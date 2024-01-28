@@ -8,6 +8,8 @@ services:
       - "3000:3000"
     depends_on:
       - spring-backend
+      - login-microservice
+      - liked-wineries-microservice
 
   # Java Spring Backend
   spring-backend:
@@ -15,3 +17,15 @@ services:
       context: ./  # Path to the directory containing your Java Spring app
     ports:
       - "8080:8080"
+
+  login-microservice:
+    build:
+      context: /Domashna4/MicroServiceForLogin
+    ports:
+      - "8086:8086"
+
+  liked-wineries-microservice:
+    build:
+      context: /Domashna4/MicroServiceLikedWIneries
+    ports:
+      - "8087:8087"
