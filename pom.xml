@@ -11,8 +11,8 @@
     <groupId>macedonia.winery</groupId>
     <artifactId>MKWine</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>DIANS Winery</name>
-    <description>DIANS Winery</description>
+    <name>DIANS-Winery</name>
+    <description>DIANS-Winery</description>
     <properties>
         <java.version>17</java.version>
     </properties>
