@@ -1,5 +1,5 @@
 export const getWines = (setItems, setError) => {
-	fetch('http://localhost:8080/wines/getAll')
+	fetch('http://localhost:9097/wines/getAll')
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
@@ -8,7 +8,7 @@ export const getWines = (setItems, setError) => {
 		.catch((err) => setError(err));
 };
 export const getWineries = (setItems, setError) => {
-	fetch('http://localhost:8080/wineries/getAll')
+	fetch('http://localhost:9097/wineries/getAll')
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);

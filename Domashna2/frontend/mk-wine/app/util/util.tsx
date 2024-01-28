@@ -1,6 +1,6 @@
 export function LoginUser(email, password, setUser, setError) {
 	try {
-		fetch('http://localhost:8080/user/login', {
+		fetch('http://localhost:8086/user/login', {
 			method: 'POST',
 			body: JSON.stringify({
 				username: email,
@@ -29,7 +29,7 @@ export function LoginUser(email, password, setUser, setError) {
 
 export function DislikeWine(email, wine, setUser) {
 	try {
-		fetch('http://localhost:8080/user/dislikeWinery', {
+		fetch('http://localhost:9097/user/dislikeWinery', {
 			method: 'POST',
 			body: JSON.stringify({
 				userId: email,
@@ -53,7 +53,7 @@ export function DislikeWine(email, wine, setUser) {
 
 export function LikeWine(email, wine, setUser) {
 	try {
-		fetch('http://localhost:8080/user/likeWinery', {
+		fetch('http://localhost:9097/user/likeWinery', {
 			method: 'POST',
 			body: JSON.stringify({
 				userId: email,
@@ -77,7 +77,7 @@ export function LikeWine(email, wine, setUser) {
 
 export function AddComment(wine, comment) {
 	try {
-		fetch('http://localhost:8080/wineries/addComment', {
+		fetch('http://localhost:9097/wineries/addComment', {
 			method: 'POST',
 			body: JSON.stringify({
 				wineryId: wine,
@@ -95,7 +95,7 @@ export function AddComment(wine, comment) {
 }
 
 export const RegisterUser = (username, email, password, setUser, setError) => {
-	fetch('http://localhost:8080/user/register', {
+	fetch('http://localhost:9097/user/register', {
 		method: 'POST',
 		body: JSON.stringify({
 			username: username,
