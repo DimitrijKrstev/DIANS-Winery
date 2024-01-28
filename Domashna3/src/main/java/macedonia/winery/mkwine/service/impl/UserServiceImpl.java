@@ -45,10 +45,5 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.save(newUser);
     }
-
-    @Override
-    public User loginUser(UserDto userDto) {
-        User user = userRepository.findUserByUsernameAndPassword(userDto.getUsername(), userDto.getPassword());
-        return user;
-    }
+    
 }

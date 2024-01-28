@@ -9,5 +9,4 @@ public interface UserService {
     User likeWinery(UserLikeDto userLikeDto);
     User disslikeWinery(UserLikeDto userLikeDto);
     User registerUser(UserDto userDto);
-    User loginUser(UserDto userDto);
 }
