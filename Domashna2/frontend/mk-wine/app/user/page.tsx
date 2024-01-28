@@ -2,7 +2,7 @@
 import Logo from '../../public/images/Icon.png';
 import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image';
-import { GlobalContext } from '../context/page';
+import { GlobalContext } from '../context/context';
 import { useRouter } from 'next/router';
 import { DislikeWine } from '../util/util';
 

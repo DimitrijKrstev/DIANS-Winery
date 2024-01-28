@@ -1,0 +1,276 @@
+{
+	"type": "FeatureCollection",
+	"generator": "overpass-turbo",
+	"copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+	"timestamp": "2023-11-11T18:23:30Z",
+	"features": [
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/180716821",
+				"amenity": "wine_cellar",
+				"craft": "winery",
+				"int_name": "Popova Kula",
+				"name": "Попова Кула",
+				"shop": "wine",
+				"tasting": "yes"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.2261, 41.410614]
+			},
+			"id": "way/180716821"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/180725215",
+				"amenity": "wine_cellar",
+				"attraction": "winery",
+				"industrial": "winery",
+				"int_name": "Vinarija Grkov",
+				"landuse": "industrial",
+				"man_made": "winery",
+				"name": "Винарија Грков",
+				"name:en": "Grkov Winery",
+				"shop": "wine",
+				"tasting": "yes",
+				"tourism": "winery"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.128117, 41.315422]
+			},
+			"id": "way/180725215"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/370311640",
+				"building": "yes",
+				"craft": "winery",
+				"name": "Domaine Lepovo"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.034212, 41.517864]
+			},
+			"id": "way/370311640"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/476221803",
+				"building": "yes",
+				"craft": "winery",
+				"name": "Камник",
+				"tourism": "wine_cellar"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.490385, 42.007866]
+			},
+			"id": "way/476221803"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/533757101",
+				"craft": "winery",
+				"name": "Vinarija Stobi",
+				"website": "https://www.stobiwinery.mk/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.936052, 41.581486]
+			},
+			"id": "way/533757101"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/674123483",
+				"addr:housenumber": "7",
+				"addr:street": "1519",
+				"building": "commercial",
+				"name": "Kartal Winery Винарската визба КАРТАЛ"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.476423, 41.962433]
+			},
+			"id": "way/674123483"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "way/1221269982",
+				"addr:city": "Кавадарци",
+				"addr:housenumber": "16",
+				"addr:postcode": "1430",
+				"addr:street": "Косовска",
+				"building": "yes",
+				"country": "MKD",
+				"craft": "winery",
+				"name": "Zaharchev Winery and Distillery",
+				"name:mk": "Семејна винарија „Захарчев“",
+				"opening_hours": "Mo-Su 08:00-22:00",
+				"operator": "SJ",
+				"phone": "070 253 103",
+				"website": "https://www.zaharchev.mk/"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.004782, 41.43615]
+			},
+			"id": "way/1221269982"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5167052721",
+				"addr:city": "Veles",
+				"craft": "winery",
+				"name": "Chateau Sopot",
+				"name:mk": "Шато Сопот",
+				"opening_hours": "Mo-Su 09:00-22:00",
+				"phone": "+389 78 663 300"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.7409905, 41.777774]
+			},
+			"id": "node/5167052721"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5667327121",
+				"addr:postcode": "1440",
+				"addr:street": "Индустриска",
+				"email": "bovin@t.mk",
+				"name": "Бовин винарија",
+				"name:en": "Bovin Winery",
+				"name:hr": "Bovin vinarija",
+				"name:ru": "Бовин",
+				"opening_hours": "Mo-Fr 08:00-16:00",
+				"phone": "043365322",
+				"shop": "wine",
+				"website": "http://www.bovin.com.mk"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.0915153, 41.4943704]
+			},
+			"id": "node/5667327121"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5901737585",
+				"name:en": "Tikves",
+				"shop": "wine"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.4394921, 41.9940075]
+			},
+			"id": "node/5901737585"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5901752486",
+				"name:en": "Kamnik",
+				"shop": "wine"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.4272901, 41.9950477]
+			},
+			"id": "node/5901752486"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5901752487",
+				"amenity": "pub",
+				"name:en": "Winery Temov"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.4358622, 42.0001818]
+			},
+			"id": "node/5901752487"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/5901753385",
+				"name": "Сковин",
+				"name:en": "Skovin",
+				"shop": "wine"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.4310531, 41.9956025]
+			},
+			"id": "node/5901753385"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/6348087929",
+				"shop": "wine"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [22.1940439, 41.737897]
+			},
+			"id": "node/6348087929"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/6815931485",
+				"amenity": "pub",
+				"name": "Stobi Winery"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.4209535, 42.0000999]
+			},
+			"id": "node/6815931485"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/9774249117",
+				"amenity": "restaurant",
+				"name:en": "Château Sopot Winery"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [21.740898, 41.7774687]
+			},
+			"id": "node/9774249117"
+		},
+		{
+			"type": "Feature",
+			"properties": {
+				"@id": "node/9870303417",
+				"email": "info@monasterywinery.com",
+				"name:en": "monastery winery",
+				"opening_hours": "Mo-Su 08:00-23:00",
+				"phone": "+389 78474656",
+				"shop": "wine",
+				"website": "https://monasterywinery.com"
+			},
+			"geometry": {
+				"type": "Point",
+				"coordinates": [20.877133, 41.1848848]
+			},
+			"id": "node/9870303417"
+		}
+	]
+}

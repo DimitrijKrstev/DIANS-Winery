@@ -1,15 +1,15 @@
-'use client';
-import Logo from '../../public/images/MKWineLogo.png';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useContext, useState } from 'react';
-import { RegisterUser } from '../util/util';
-import { GlobalContext } from '../context/page';
+"use client";
+import Logo from "../../public/images/MKWineLogo.png";
+import Image from "next/image";
+import Link from "next/link";
+import { useContext, useState } from "react";
+import { RegisterUser } from "../util/util";
+import { GlobalContext } from "../context/context";
 
 export default function Register() {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [username, setUsername] = useState('');
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [username, setUsername] = useState("");
 	const [error, setError] = useState();
 	const { user, setUser } = useContext(GlobalContext);
 	return (
@@ -29,31 +29,19 @@ export default function Register() {
 							name="name"
 						/>
 						<label className="mt-3">Email</label>
-						<input
-							type="text"
-							id="email"
-							onChange={(e) => setEmail(e.target.value)}
-							className="input-primary"
-						/>
+						<input type="text" id="email" onChange={(e) => setEmail(e.target.value)} className="input-primary" />
 						<label className="mt-5">Password</label>
-						<input
-							type="text"
-							id="password"
-							onChange={(e) => setPassword(e.target.value)}
-							className="input-primary"
-						/>
+						<input type="text" id="password" onChange={(e) => setPassword(e.target.value)} className="input-primary" />
 						<button
 							className="bg-stone-800 rounded-3xl text-white hover:text-red-600 mt-4 w-max p-5"
-							onClick={() =>
-								RegisterUser(username, email, password, setUser, setError)
-							}
+							onClick={() => RegisterUser(username, email, password, setUser, setError)}
 						>
 							Register
 						</button>
 					</div>
 				</div>
 				<div className="text-center font-body text-2xl">
-					Already have an account?{' '}
+					Already have an account?{" "}
 					<Link href="/login" className=" border-b-[3px]">
 						Sign in
 					</Link>
