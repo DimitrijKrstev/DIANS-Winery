@@ -1,13 +1,13 @@
-'use client';
-import Vinarija1 from '../../public/images/tikves-posledno.jpg';
+"use client";
+import Vinarija1 from "../../public/images/tikves-posledno.jpg";
 
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { getWineries } from '../../util/wineItemsutil';
-import { useState, useEffect, useContext } from 'react';
-import { AddComment } from '../../util/util';
-import { LikeWine } from '../../util/util';
-import { GlobalContext } from '../../context/page';
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { getWineries } from "../../util/wineItemsutil";
+import { useState, useEffect, useContext } from "react";
+import { AddComment } from "../../util/util";
+import { LikeWine } from "../../util/util";
+import { GlobalContext } from "../../context/context";
 
 export default function Home({ params }) {
 	const { user, setUser } = useContext(GlobalContext);
@@ -29,8 +29,8 @@ export default function Home({ params }) {
 		getWineries(setWinries, setError);
 	};
 	const handleLikes = () => {
-		console.log('ID ' + user.id);
-		console.log('WINE ID: ' + selectedWine.id);
+		console.log("ID " + user.id);
+		console.log("WINE ID: " + selectedWine.id);
 		LikeWine(user.id, selectedWine.id, setUser);
 	};
 	useEffect(() => {
@@ -39,7 +39,7 @@ export default function Home({ params }) {
 	useEffect(() => {
 		console.log(wineries);
 		setWine(wineries.filter((item) => item.id == id)[0]);
-		console.log('WINEE');
+		console.log("WINEE");
 		console.log(selectedWine);
 	}, [wineries]);
 
@@ -49,9 +49,7 @@ export default function Home({ params }) {
 				{selectedWine && (
 					<div className="flex lg:flex-row md:flex-row sm:flex-row flex-col w-[70vw] mx-auto ">
 						<div className=" flex basis-3/4 justify-center  flex-col">
-							<h1 className="text-shadowed-white text-6xl font-bold mb-3 font-body">
-								{selectedWine.name}
-							</h1>
+							<h1 className="text-shadowed-white text-6xl font-bold mb-3 font-body">{selectedWine.name}</h1>
 							<br />
 							<p className="text-shadowed-white  " id="desc">
 								{selectedWine.description}
@@ -84,9 +82,7 @@ export default function Home({ params }) {
 									placeholder="Enter your review"
 									className="lg:h-[40%] md:h-[40%] sm:h-[40%]  h-[20%] rounded-xl p-2 text-black "
 								></textarea>
-								<button className="bg-stone-600 rounded-3xl text-white hover:text-red-600 mt-4 w-max p-3">
-									Save
-								</button>
+								<button className="bg-stone-600 rounded-3xl text-white hover:text-red-600 mt-4 w-max p-3">Save</button>
 							</form>
 						</div>
 					</div>

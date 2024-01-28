@@ -17,7 +17,6 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 
 RUN npm ci
 
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
@@ -72,4 +71,4 @@ ENV HOSTNAME "0.0.0.0"
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD ["sh", "-c", "echo $PATH && npm start"]
+CMD ["sh", "-c", "echo $PATH && npm i && npm start"]
