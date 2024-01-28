@@ -9,6 +9,8 @@ import { DislikeWine } from "../util/util";
 export default function Home() {
 	const router = require("next/router");
 	const { user, setUser } = useContext(GlobalContext);
+	console.log(user.likedWineries);
+	console.log(user);
 	return (
 		<div className="flex justify-center items-center h-screen">
 			{user && (
@@ -32,7 +34,7 @@ export default function Home() {
 											{index + 1}. {winery.name}{" "}
 											<button
 												onClick={() => {
-													DislikeWine(user.id, winery.id, setUser());
+													DislikeWine(user.id, winery.id, setUser);
 												}}
 												className="text-clip w-max h-1/4 text-slate-50 text-xl text-center font-Rubik bg-red-600 bg-opacity-70 rounded-[25px]  p-2  mt-8 mr-[4vh]"
 											>

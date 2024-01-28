@@ -27,11 +27,13 @@ public class DataHolder {
     private final WineRepository wineRepository;
     private final UserRepository userRepository;
 
-    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository, UserRepository userRepository) {
+    private final ArrayList<String> desck;
+    public DataHolder(WineryRepository wineryRepository, ArrayList<String> urls, WineRepository wineRepository, UserRepository userRepository, ArrayList<String> desck) {
         this.wineryRepository = wineryRepository;
         this.urls = urls;
         this.wineRepository = wineRepository;
         this.userRepository = userRepository;
+        this.desck = desck;
     }
     @PostConstruct
     public void init() throws IOException {
@@ -57,15 +59,31 @@ public class DataHolder {
             urls.add("https://cdn.discordapp.com/attachments/1171082431676289045/1188521306459734116/monastery_winery.jpg?ex=659ad3b9&is=65885eb9&hm=0c6c9c53d168271c36711ee0354207ad6374625917181df9187bd5743cad1836&");
 
 
-            wineRepository.save(new Wine("Tga za Jug","https://cdn.discordapp.com/attachments/1171082431676289045/1188555093080023080/vino1.png?ex=659af330&is=65887e30&hm=8b94e61a423b50fe66c7b1b72ac3bb6cde07a33ed203b0824992ffee251e86cc&"));
-            wineRepository.save(new Wine("Alexandria","https://cdn.discordapp.com/attachments/1171082431676289045/1188555113409814628/vino2.png?ex=659af335&is=65887e35&hm=4161270d4b125f9049a52aa132d6ac1d4c59ad5574b8d8ba1ea5d279abdc56bb&"));
-            wineRepository.save(new Wine("Barovo","https://cdn.discordapp.com/attachments/1171082431676289045/1188555134582657054/vino3.png?ex=659af33a&is=65887e3a&hm=9cdfa9b9d386e44c7fb2d1f5ee5b8b23f490c4a08fed3df3e64aaf6e025bca43&"));
-            wineRepository.save(new Wine("Terov","https://cdn.discordapp.com/attachments/1171082431676289045/1188555159123542116/vino4.png?ex=659af340&is=65887e40&hm=5783603047440864ae43938c852dfa3b5f9e070c161fe113a3490a0ac5c103bc&"));
-            wineRepository.save(new Wine("Stobi","https://cdn.discordapp.com/attachments/1171082431676289045/1188555173660991529/vino5.png?ex=659af343&is=65887e43&hm=15022c17a0858218190489f2f0eaa6514263ced3387723310515e70ec7b768b8&"));
-            wineRepository.save(new Wine("BelaVoda","https://cdn.discordapp.com/attachments/1171082431676289045/1188555189842612316/vino6.png?ex=659af347&is=65887e47&hm=1d05024bb8092ad77c8a0081565ce5211a789b43ba7d2f01d0f6c7cef4df36c3&"));
-            wineRepository.save(new Wine("Kratoshija","https://cdn.discordapp.com/attachments/1171082431676289045/1188555206737285150/vino7.png?ex=659af34b&is=65887e4b&hm=41002a873f0a51b2d69afa739b8d8564a0fc7b33b40d520c62eb62389bcee9e7&"));
-            wineRepository.save(new Wine("Signatore","https://cdn.discordapp.com/attachments/1171082431676289045/1188555686288822312/vino8.png?ex=659af3bd&is=65887ebd&hm=d06efe6edee348e059629feb7741fe7ec1cffcc9ec091194aaedf547a0386515&"));
+            wineRepository.save( Wine.builder().name("Tga za Jug").url( "https://cdn.discordapp.com/attachments/1171082431676289045/1188555093080023080/vino1.png?ex=659af330&is=65887e30&hm=8b94e61a423b50fe66c7b1b72ac3bb6cde07a33ed203b0824992ffee251e86cc&").build());
+            wineRepository.save(Wine.builder().name("Alexandria").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555113409814628/vino2.png?ex=659af335&is=65887e35&hm=4161270d4b125f9049a52aa132d6ac1d4c59ad5574b8d8ba1ea5d279abdc56bb&").build());
+            wineRepository.save(Wine.builder().name("Barovo").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555134582657054/vino3.png?ex=659af33a&is=65887e3a&hm=9cdfa9b9d386e44c7fb2d1f5ee5b8b23f490c4a08fed3df3e64aaf6e025bca43&").build());
+            wineRepository.save(Wine.builder().name("Terov").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555159123542116/vino4.png?ex=659af340&is=65887e40&hm=5783603047440864ae43938c852dfa3b5f9e070c161fe113a3490a0ac5c103bc&").build());
+            wineRepository.save(Wine.builder().name("Stobi").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555173660991529/vino5.png?ex=659af343&is=65887e43&hm=15022c17a0858218190489f2f0eaa6514263ced3387723310515e70ec7b768b8&").build());
+            wineRepository.save(Wine.builder().name("BelaVoda").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555189842612316/vino6.png?ex=659af347&is=65887e47&hm=1d05024bb8092ad77c8a0081565ce5211a789b43ba7d2f01d0f6c7cef4df36c3&").build());
+            wineRepository.save(Wine.builder().name("Kratoshija").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555206737285150/vino7.png?ex=659af34b&is=65887e4b&hm=41002a873f0a51b2d69afa739b8d8564a0fc7b33b40d520c62eb62389bcee9e7&").build());
+            wineRepository.save(Wine.builder().name("Signatore").url("https://cdn.discordapp.com/attachments/1171082431676289045/1188555686288822312/vino8.png?ex=659af3bd&is=65887ebd&hm=d06efe6edee348e059629feb7741fe7ec1cffcc9ec091194aaedf547a0386515&").build());
 
+            desck.add("Vinarija Grkov se naogja vo podnozhjeto na planinata Kozhuf, vo seloto Krnjevo, vo okolinata na Kavadarci.");
+            desck.add("Popova kula e vinarija koja e locirana vo Demir kapija.");
+            desck.add("Domaine Lepovo e osnovana vo 2009 godina. Ima kapacitet od 700.000 litri vino.");
+            desck.add("Vinarijata Chateau Kamnik e osnovana vo 2004-ta godina. Locirana e vo glavniot grad Skopje. ");
+            desck.add("Vinarijata Stobi se naogja samo 80km od Skopje, vo srceto na Makedonija. ");
+            desck.add("Vinarijata Kartal e locirana vo Skopje, so kapacitet od 100.000 litri na godishno nivo, najsovremena ");
+            desck.add("Vinarijata Zaharchev e locirana vo Kavadarci, osnovana vo 2020-ta godina. ");
+            desck.add("Chateau Sopot edna od najzhivopisnite vinarii vo Makedonija, locirana vo srceto na Veleshkiot vinski region.");
+            desck.add("Bovin e prvata privatno izgradena vinarija vo Makedonija.");
+            desck.add("Vinarijata Tikvesh e osnovana vo dalecnata 1885-ta godina.");
+            desck.add("2.Vinarijata Chateau Kamnik e osnovana vo 2004-ta godina. Locirana e vo glavniot grad Skopje.");
+            desck.add("Vinarijata Tamov");
+            desck.add("Vinarijata Skovin e osnovana vo 1979 godina kako posveten sledbenik na vekovnata tradicija na proizvodstvo na vin.");
+            desck.add("2.Vinarijata Stobi se naogja samo 80km od Skopje, vo srceto na Makedonija.");
+            desck.add("2.Chateau Sopot edna od najzhivopisnite vinarii vo Makedonija, locirana vo srceto na Veleshkiot vinski region.");
+            desck.add("Vinarijata Manastir (Monastery) e locirana vo seloto Openica, samo na 10km od Ohrid. Se naogja pod manasti");
             Object features = resultMap.get("features");
             List<String> names=new ArrayList<>();
             List<Wine> list1=new ArrayList<>();
@@ -142,11 +160,13 @@ public class DataHolder {
                         x = arrayList.get(0);
                         y = arrayList.get(1);
                     }
+                        if(phone == null)
+                            phone="Nema Telefonski broj";
                         if(name!=null) {
                             System.out.println(urls.get(b));
                             if(c==4)
                                 c=0;
-                            wineryRepository.save(new Winery(name, website, phone, email, amenity, x, y,urls.get(b), new ArrayList<Comment>(),megalist.get(c)));
+                            wineryRepository.save(Winery.builder().name(name).website(website).phone(phone).email(email).amenity(amenity).X(x).Y(y).url(urls.get(b)).description(desck.get(b)).commentList(new ArrayList<Comment>()).wines(megalist.get(c)).build());
                             b++;
                             c++;
                         }
